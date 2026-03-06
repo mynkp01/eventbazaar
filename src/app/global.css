@@ -1,0 +1,477 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* *::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*:focus-within {
+  outline: 0 !important;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  -webkit-text-size-adjust: none !important;
+  -ms-text-size-adjust: none !important;
+  text-size-adjust: none !important;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-xl bg-primary-400;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* .ck.ck-balloon-panel.ck-balloon-panel_visible {
+  display: none !important;
+} */
+
+/* #bg-img {
+  background-image: url("../assets//others/BackgroundGradient.png");
+} */
+/* ----------------- Hamburger ----------------------------- */
+.buttons__burger {
+  --size: 1rem;
+  --clr: #000;
+  width: var(--size);
+  height: var(--size);
+  cursor: pointer;
+  position: relative;
+  display: block;
+}
+
+.buttons__burger #burger {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.buttons__burger span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 2px solid var(--clr);
+  background-color: var(--clr);
+  transition: 0.2s ease-in-out;
+}
+
+.buttons__burger span:nth-of-type(1) {
+  top: 0;
+  right: 0;
+  transform-origin: right center;
+}
+
+.buttons__burger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.buttons__burger span:nth-of-type(3) {
+  top: 100%;
+  right: 0;
+  transform-origin: right center;
+  transform: translateY(-100%);
+}
+
+.open .buttons__burger span:nth-of-type(1) {
+  transform: translateY(-30%) rotate(130deg);
+  width: 50%;
+  top: 50%;
+  left: -50%;
+}
+
+.open .buttons__burger span:nth-of-type(3) {
+  transform: translateY(-70%) rotate(-130deg);
+  width: 50%;
+  top: 50%;
+  left: -50%;
+}
+
+.swal2-container {
+  z-index: 9999999999;
+}
+
+/* ----------------- Font Style ----------------------------- */
+.text-12-normal {
+  @apply text-[0.75rem] font-normal leading-[16px] tracking-[0.5px];
+}
+
+.text-12-500 {
+  @apply text-[0.75rem] font-medium leading-[16px] tracking-[-0.12px];
+}
+
+.text-12-600 {
+  @apply text-[0.75rem] font-semibold leading-[16px] tracking-[-0.12px];
+}
+
+.text-12-700 {
+  @apply text-[10px] font-bold leading-[16px] tracking-[-0.12px] sm:text-[0.75rem];
+}
+
+.text-14-normal {
+  @apply text-12-500 font-normal tracking-[-1px] sm:text-[0.875rem] sm:leading-[24px];
+}
+
+.text-14-500 {
+  @apply text-12-500 font-medium sm:text-[0.875rem] sm:leading-[24px] sm:tracking-[-0.14px];
+}
+
+.text-14-600 {
+  @apply text-12-600 font-semibold sm:text-[0.875rem] sm:leading-[24px] sm:tracking-[-0.14px];
+}
+
+.text-14-700 {
+  @apply text-[0.75rem] font-bold sm:text-[0.875rem] sm:leading-[24px] sm:tracking-[-0.14px];
+}
+
+.text-15-400 {
+  @apply text-14-600 font-normal sm:text-[15px] sm:leading-[24px] sm:tracking-[-0.15px];
+}
+
+.text-15-500 {
+  @apply text-12-500 font-medium sm:text-[15px] sm:leading-[24px] sm:tracking-[-0.15px];
+}
+
+.text-15-600 {
+  @apply text-14-600 font-semibold sm:text-[15px] sm:leading-[24px] sm:tracking-[-0.15px];
+}
+
+.text-15-700 {
+  @apply text-14-600 font-bold sm:text-[15px] sm:leading-[24px] sm:tracking-[-0.15px];
+}
+
+.text-16-400 {
+  @apply text-15-400 font-normal sm:text-[1rem] sm:leading-[19px];
+}
+
+.text-16-600 {
+  @apply text-15-400 font-semibold sm:text-[1rem] sm:leading-[19px];
+}
+
+.text-20-600 {
+  @apply text-16-600 font-semibold sm:text-[20px] sm:leading-[32px] sm:tracking-[-0.4px];
+}
+
+/* ----------------- Component style ----------------------------- */
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.heading-40 {
+  @apply text-[30px] font-semibold leading-[40px] tracking-[-1px] sm:text-[40px] sm:leading-[48px] sm:tracking-[-0.8px];
+}
+
+.heading-48 {
+  @apply text-[24px] font-semibold leading-[12px] tracking-[-1.44px] sm:text-[48px] sm:leading-[48px];
+}
+
+.label-field {
+  @apply text-14-600 flex items-center;
+}
+
+.error-text {
+  @apply text-14-600 mt-1 font-medium text-red-500;
+}
+
+.btn-fill-hover {
+  @apply transition-all ease-in-out hover:border-[#5097f7] hover:bg-[#5097f7];
+}
+
+.btn-outline-hover {
+  @apply transition-all ease-in-out hover:bg-gray-200;
+}
+
+/* ----------------- CkEditor style ----------------------------- */
+:root {
+  --ck-border-radius: 12px !important;
+}
+
+.ck.ck-editor {
+  margin-top: 8px !important;
+}
+
+.ck.ck-editor__top .ck-sticky-panel .ck-sticky-panel__content {
+  border-top: 2px solid #9a9fa540 !important;
+  border-left: 2px solid #9a9fa540 !important;
+  border-right: 2px solid #9a9fa540 !important;
+}
+
+.ck.ck-toolbar > .ck-toolbar__items {
+  gap: 16px;
+  padding: 5px 0 5px 0;
+  flex-wrap: wrap !important;
+}
+
+.ck-rounded-corners .ck.ck-editor__main > .ck-editor__editable,
+.ck.ck-editor__main > .ck-editor__editable.ck-rounded-corners {
+  border-top: 0 !important;
+  border-left: 2px solid #9a9fa540 !important;
+  border-right: 2px solid #9a9fa540 !important;
+  border-bottom: 2px solid #9a9fa540 !important;
+  box-shadow: none !important;
+  background-color: #f4f4f4;
+  min-height: 8rem;
+}
+
+/* ----------------- Tab List Profile----------------------------- */
+.css-19wsa2m-MuiButtonBase-root-MuiTab-root {
+  font-family: "Inter", sans-serif !important;
+  color: #6f767e !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  line-height: 24px !important;
+  letter-spacing: -0.15px !important;
+}
+
+.css-19wsa2m-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  color: #1a1d1f !important;
+  background-color: #efefef !important;
+  border-radius: 8px !important;
+}
+
+.css-12ld6eb-MuiTabs-indicator {
+  height: 0 !important;
+}
+
+/* ----------------- Modal----------------------------- */
+.css-8zgow4-MuiTypography-root {
+  font-family: "Inter", sans-serif !important;
+}
+
+/* ----------------- Date Picker Style----------------------------- */
+.css-lxfshk-MuiInputBase-root-MuiOutlinedInput-root {
+  font-family: "Inter", sans-serif !important;
+  font-size: 14px !important;
+  color: #1a1d1f !important;
+  font-weight: 500 !important;
+  border-radius: 12px !important;
+  background: #f4f4f4 !important;
+}
+
+.css-lc42l8-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 14px !important;
+}
+
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border-color: #f4f4f4 !important;
+}
+
+.ant-image {
+  display: block !important;
+}
+
+.ant-image-preview-operations-wrapper,
+.ant-image-preview-mask,
+.ant-image-preview-wrap {
+  z-index: 1500 !important; /* MUI modal uses 1300 by default */
+}
+
+.MuiAutocomplete-popper {
+  z-index: 1100 !important; /* Header uses 1200 & MUI modal uses 1300 by default */
+}
+
+/* -------------- Testimonial ---------------- */
+
+.eb-testimonial .swiper-wrapper {
+  margin-bottom: 70px;
+  text-align: left;
+}
+
+.eb-testimonial .eb-swiper {
+  margin-left: 0;
+}
+
+.eb-testimonial .swiper-pagination {
+  text-align: left;
+}
+
+/* -------------- Tabs Css --------------------- */
+
+.eb-blog-tab .react-tabs__tab--selected {
+  background: #5e8c3a;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 25px;
+  border: 1px solid #5e8c3a !important;
+  border-bottom: 1px solid #5e8c3a !important;
+}
+
+.eb-blog-tab .react-tabs__tab-list {
+  border-bottom: none;
+  margin-bottom: 60px;
+}
+
+.eb-blog-tab .react-tabs__tab {
+  border: 1px solid black;
+  border-bottom: 1px solid;
+  border-radius: 25px;
+  padding: 8px 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+/* -------------- swiper navigation -------------------- */
+
+.swiper-button-prev,
+.swiper-button-next {
+  background: #5e8c3a;
+  padding: 22px;
+  border-radius: 23px;
+  box-shadow: 0px 3px 10px 0px black;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after,
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  color: white;
+  font-size: 16px !important;
+}
+
+/* -------------- Mobile media query ---------------------- */
+
+@media only screen and (max-width: 640px) {
+  /* ----------TabList----------------- */
+  .css-19wsa2m-MuiButtonBase-root-MuiTab-root {
+    min-height: 35px !important;
+    max-width: 80% !important;
+    padding: 0 0 0 10px !important;
+    align-items: flex-start !important;
+  }
+
+  /*-------------------- Ckeditor--------------------------- */
+  .ck.ck-button {
+    min-width: 0 !important;
+  }
+
+  .ck.ck-toolbar > .ck-toolbar__items > *:not(.ck-toolbar__line-break) {
+    margin-right: 0 !important;
+  }
+
+  .ck.ck-icon {
+    font-size: xx-small !important;
+  }
+
+  .ck.ck-toolbar > .ck-toolbar__items {
+    gap: 8px;
+    row-gap: 0px;
+    padding: 1px 0 1px 0;
+  }
+
+  /* -------------Checkbox----------------- */
+  .css-1l37aim-MuiButtonBase-root-MuiCheckbox-root {
+    padding: 6px !important;
+  }
+
+  /* ------------Delete Modal----------------- */
+  .css-e2ps9o {
+    width: 200px !important;
+    padding: 12px !important;
+  }
+
+  .css-8zgow4-MuiTypography-root {
+    font-size: 14px !important;
+  }
+
+  .css-1edfpdg-MuiTypography-root {
+    font-size: 12px !important;
+  }
+}
+
+/* -------------- Laptop media query ---------------------- */
+
+@media only screen and (min-width: 1080px) {
+  .css-19wsa2m-MuiButtonBase-root-MuiTab-root {
+    max-width: 100% !important;
+  }
+
+  .css-1mxakkw-MuiTabs-root {
+    width: 300px !important;
+  }
+}
+
+/* Letter Spacing formula
+LS(px) = fontSize * ( needed spacing in percentage / 100 )
+*/
+
+/* -------------- Accordion ---------------------- */
+
+.MuiAccordion-root {
+  @apply !my-0 !bg-inherit !px-4 !shadow-none before:!opacity-100;
+}
+
+.MuiAccordionSummary-root {
+  @apply !m-0 !flex !min-h-16 !items-center !p-0 !text-sm !font-semibold md:!text-base;
+}
+
+.MuiAccordionDetails-root {
+  @apply !m-0 !px-0 !pt-0 !text-xs !text-grey-200 md:!text-sm;
+}
+
+.ck-content ol {
+  padding-left: 20px !important;
+}
+
+.ck-content h1 {
+  @apply text-4xl;
+  @apply font-bold;
+}
+.ck-content h2 {
+  @apply text-3xl;
+  @apply font-bold;
+}
+.ck-content h3 {
+  @apply text-2xl;
+  @apply font-bold;
+}
+.ck-content h4 {
+  @apply text-xl;
+  @apply font-semibold;
+}
+.ck-content h5 {
+  @apply text-lg;
+  @apply font-semibold;
+}
+.ck-content h6 {
+  @apply text-sm;
+  @apply font-semibold;
+}
+
+.ck-rounded-corners .ck.ck-balloon-panel {
+  z-index: 1350;
+}

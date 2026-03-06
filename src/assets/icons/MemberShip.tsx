@@ -1,0 +1,24 @@
+const MemberShip = (props) => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+    fill="none"
+  >
+    <path
+      d="M9 7C9 5.89543 9.89543 5 11 5H13C14.1046 5 15 5.89543 15 7V18C15 18.5523 14.5523 19 14 19H10C9.44772 19 9 18.5523 9 18V7Z"
+      fill={"currentColor"}
+    />
+    <path
+      d="M17 13C17 12.4477 17.4477 12 18 12H20C21.1046 12 22 12.8954 22 14V18C22 18.5523 21.5523 19 21 19H18C17.4477 19 17 18.5523 17 18V13Z"
+      fill={"currentColor"}
+    />
+    <path
+      d="M2 12C2 10.8954 2.89543 10 4 10H6C6.55228 10 7 10.4477 7 11V18C7 18.5523 6.55228 19 6 19H3C2.44772 19 2 18.5523 2 18V12Z"
+      fill={"currentColor"}
+    />
+  </svg>
+);
+export default MemberShip;
